@@ -1,18 +1,16 @@
 <template>
   <div class="test-component">
+    <button class="tooltip assertionTip">i</button>
     <form action class="query">
       <div class="selectorQueries">
         <div class="QueryInput">
           <p class="nameQuery">Name:</p>
-          <input
-            type="text"
-            @input="saveTestItem"
-            v-model="selectorName"
-            class="queryInputBox"
-          />
+          <input type="text" @input="saveTestItem" v-model="selectorName" class="queryInputBox" />
         </div>
         <div class="selectorQuery">
-          <div class="queryTitle"><p class="variantQuery">Variant:</p></div>
+          <div class="queryTitle">
+            <p class="variantQuery">Variant:</p>
+          </div>
           <select
             name="queryVariant"
             @change="saveTestItem"
@@ -31,7 +29,7 @@
 
       <div class="labels">
         <div class="typeQuereContainer">
-          <p class="typeQuery"> Type:</p>
+          <p class="typeQuery">Type:</p>
           <select name="queryType" @change="saveTestItem" v-model="queryType" class="queryType">
             <option value="LabelText">LabelText</option>
             <option value="PlaceholderText">PlaceholderText</option>
@@ -203,5 +201,18 @@ export default {
 
 .matcherQuery {
   margin-right: 20px;
+}
+/* tool tips */
+.assertionTip {
+  margin-top: 5%;
+  margin-left: 98%;
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  border: 1px #656565 solid;
+  border-radius: 10px;
+  color: #656565;
+}
+.assertionTip:hover {
 }
 </style>

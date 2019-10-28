@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <MainLoader v-if="this.$store.getters.getFileTree" />
-    <ProjectLoader v-else /> 
+    <!-- directly go to first page of the application on boot -->
+    <ProjectLoader v-else />
   </div>
 </template> 
 
@@ -12,8 +13,8 @@ import ProjectLoader from "./containers/ProjectLoader/ProjectLoader.vue";
 export default {
   name: "peppermint",
   components: {
-    MainLoader,
-    ProjectLoader
+    MainLoader, // Main Page of the Application
+    ProjectLoader // Title page of the application
   }
 };
 </script>
@@ -36,6 +37,8 @@ body {
   /* overflow: hidden !important; */
   height: 100%;
   width: 100%;
+
+  /* color schema one */
   background-color: #232323;
 }
 

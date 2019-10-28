@@ -5,11 +5,13 @@ import TestCodeGenerator from './TestCodeGenerator';
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
+  //state of the application
   state: {
-    showFileExplorer: true,
-    url: '',
-    showWebsite: false,
+    showFileExplorer: true, //file explorer toggle button
+    url: '', //url for browser rendering feature
+    showWebsite: false, // browser rendering toggle button
     componentName: '',
+    //mock props:
     propsList: {
       keys: [],
       values: []
@@ -23,6 +25,7 @@ export const store = new Vuex.Store({
   },
   mutations: {
     changeFileExplorer(state) {
+      //changes root folder to given input
       if (!state.fileTree) return;
       state.showFileExplorer = !state.showFileExplorer;
     },

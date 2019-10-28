@@ -7,7 +7,7 @@
           <button @click="addEvent" class="button addEventButton">Add Event</button>
         </div>
         <div class="Title testNameTitle">Test Name</div>
-        <div style="width: 100%; height: 100%">
+        <div style="width: 100%; height: 100%" class="input FieldForTest">
           <input
             name="testName"
             type="text"
@@ -53,7 +53,7 @@ export default {
   methods: {
     deleteTest(e) {
       e.preventDefault();
-      
+
       this.tests.splice(this.testIndex, 1);
       this.$store.dispatch("deleteTest", this._uid);
     },
